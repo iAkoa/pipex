@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_init_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/03/06 22:59:49 by pat              ###   ########lyon.fr   */
+/*   Created: 2022/03/08 16:25:37 by pat               #+#    #+#             */
+/*   Updated: 2022/03/19 12:02:10 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../includes/pipex.h"
 
-int	main()
+void	ft_init_ptr(t_data *d)
 {
-	const char *quisuisje;
-
-	pid_t pid;
-	quisuisje = "le pere";
-	pid = fork();
-	if (pid == 0)
-	{
-		quisuisje = "le fils";
-		printf("je suis %s\n", quisuisje);
-	}
-	else
-	{
-		printf("je suis %s\n", quisuisje);
-		wait(NULL);
-	}
-	return 0;
+	d->path1.s_argv = NULL;
+	d->path1.s_envp = NULL;
+	d->path2.s_argv = NULL;
+	d->path2.s_envp = NULL;
+	d->path1.argv = NULL;
+	d->path2.argv = NULL;
+	d->path2.check_access = NULL;
+	d->path1.check_access = NULL;
 }
