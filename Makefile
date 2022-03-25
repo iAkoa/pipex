@@ -10,9 +10,12 @@ HEADER_BONUS = includes/pipex_bonus.h		\
 			libft2/includes/libft.h			\
 			libft2/includes/gc.h
 
-LIBFT	= libft
+LIBFT	= libft2
 
 INCLUDES= ${addprefix -I, ${sort ${dir ${HEADER}}}}
+
+INCLUDES_BONUS= ${addprefix -I, ${sort ${dir ${HEADER_BONUS}}}}
+
 SRCS	=	src/main.c			\
 			src/ft_free_error.c	\
 			src/ft_check.c		\
@@ -21,9 +24,10 @@ SRCS	=	src/main.c			\
 
 SRCS_BONUS	=	src_bonus/main.c			\
 			src_bonus/ft_free_error.c		\
-			src_bonus/ft_check.c			\
+			src_bonus/ft_parsing.c			\
 			src_bonus/ft_operation.c		\
 			src_bonus/ft_init_ptr.c			\
+			src_bonus/ft_set.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -39,11 +43,11 @@ all: maker ${NAME}
 %.o : %.c	${HEADER}
 			${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
-${NAME}: ${OBJS} libft/libft.a
-		${CC}  ${CFLAGS} ${OBJS} ${LIBFLAGS} ${INCLUDES} -o $@ Libft/libft.a
+${NAME}: ${OBJS} libft2/libft2.a
+		${CC}  ${CFLAGS} ${OBJS} ${LIBFLAGS} ${INCLUDES} -o $@ libft2/libft2.a
 
-${NAME_BONUS}: ${OBJS_BONUS} libft/libft.a
-		${CC}  ${CFLAGS} ${OBJS_BONUS} ${LIBFLAGS} ${INCLUDES} -o $@ Libft/libft.a
+${NAME_BONUS}: ${OBJS_BONUS} libft2/libft2.a
+		${CC}  ${CFLAGS} ${OBJS_BONUS} ${LIBFLAGS} ${INCLUDES_BONUS} -o $@ libft2/libft2.a
 
 bonus: 	maker ${NAME_BONUS}
 

@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_set.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 02:49:22 by pat               #+#    #+#             */
-/*   Updated: 2022/01/18 18:28:03 by rmattheo         ###   ########lyon.fr   */
+/*   Created: 2022/03/25 15:24:46 by rmattheo          #+#    #+#             */
+/*   Updated: 2022/03/25 18:43:36 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex_bonus.h"
 
-int	ft_putchar_fd(char c, int fd)
+void ft_set(int argc, char **argv, char **envp, t_data *d)
 {
-	write(fd, &c, 1);
-	return (1);
+	d->main.argc = argc;
+	d->main.argv = argv;
+	d->main.envp = envp;
 }
