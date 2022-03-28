@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:42:38 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 02:13:35 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 17:29:54 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	ft_pipe_infile_cmd(t_data *d);
 void	ft_pipe_cmd_cmd(t_data *d);
 void	ft_pipe_cmd_outfile(t_data *d);
 void	ft_pipe_heredock_cmd(t_data *d);
+void	ft_pipe_infile_cmd_outfile(t_data *d);
+void	ft_pipe_heredock_cmd_outfile(t_data *d);
 
 /* ft_exec */
 void	ft_exec(t_data *d);

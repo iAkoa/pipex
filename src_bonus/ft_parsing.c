@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:35:24 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 02:36:37 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 17:05:33 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,12 @@ void	ft_add_command(t_data *d, char *argv, int file)
 		if (file == d_outfile)
 		{
 			// printf(" 33333333333 \n");
-			(d->lst->command->fd_outfile = open(argv, O_RDWR, O_CREAT));
+			(d->lst->command->fd_outfile = open(argv, O_TRUNC | O_WRONLY, O_CREAT));
 		}
 		if (file == d_heredoc)
 		{
 			// printf("  1111111111 \n");
 			ft_add_heredoc(d, d->main.argv[2]);
-			
 			
 		}
 	}

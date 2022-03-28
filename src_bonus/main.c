@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 02:44:03 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 17:05:10 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@ int	main(int argc, char **argv, char **envp)
 	d.track = track;
 	ft_pars_cmd(&d);
 	d.lst = d.lst_start;
+	ft_exec(&d);
+	d.lst = d.lst_start;
 	printf("\n\n\n");
+	// int i = 0;
 	// while (d.lst)
 	// {	
+	// 	printf("NUMERO DE LA LISTE = %i\n", i);
 	// 	if (d.lst->command->cmd)
 	// 		printf("cmd = %s\n",d.lst->command->cmd[0]);
 	// 	printf("path = %s\n",d.lst->command->cmd_path);
@@ -35,7 +39,7 @@ int	main(int argc, char **argv, char **envp)
 	// 	printf("pfout = %i\n",d.lst->command->pfdout);
 	// 	printf("\n\n\n");
 	// 	d.lst = d.lst->next;
+	// 	i++;
 	// }
-	ft_exec(&d);
 	return (0);
 }
