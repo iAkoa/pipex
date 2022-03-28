@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:42:38 by pat               #+#    #+#             */
-/*   Updated: 2022/03/23 18:57:01 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 19:11:08 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,54 @@
 # include "../libft2/include/libft.h"
 
 
-typedef struct s_path
+typedef struct s_check
 {
-	int		i;
-	char	**s_envp;
-	char	**s_argv;
-	char	*check_access;
-	char	*argv;
-}			t_path;
+	char	**s_path;
+	char	*path_access;
+	char	*cmd_slash;
+}			t_check;
 
 typedef struct s_main
 {
-	int		pfd[2];
-	int		pid1;
-	int		pid2;
+	int		argc;
+	char	**argv;
+	char	**envp;
 }			t_main;
 
 typedef struct s_data
 {
-	t_path	path1;
-	t_path	path2;
-	t_main	m;
-	int		infile;
-	int		outfile;
+	t_list		*lst;
+	t_track		*track;
+	t_check		check;
+	t_main		main;
+	t_list		*lst_start;
 }			t_data;
 
-/* ft_free_error */
-void	ft_free_split(void ***ptr);
-void	ft_error(int i, char *argv, t_data *d);
-void	ft_free_all(t_data *d);
-void	ft_memdel(void **ptr);
-void	ft_init_ptr(t_data *d);
+/* check */
+void	ft_check_path(t_data *d, char *argv);
+void	ft_check_fd(t_data *d, int infile, int outfile);
 
-/* ft_check */
-void	ft_path (char **envp, char **argv, t_data *d);
-int		ft_path_step (char **envp, char *argv, t_path *p, t_data *d);
+/* pars */
+void	ft_add_heredoc(t_data *d, char *argv);
+void	ft_add_command(t_data *d, char *argv, int file);
+void	ft_pars_cmd(t_data *d);
 
-/* ft_opertation */
-void	ft_first_fork(t_data *d, char **envp);
-void	ft_second_fork(t_data *d, char **envp);
+/* ft_set */
+void ft_set(int argc, char **argv, char **envp, t_data *data);
+
+/* ft_creat_lst */
+void	ft_creat_lst(t_data *d);
+
+/* ft_operation */
+void	ft_pipe_infile_cmd(t_data *d);
+void	ft_pipe_cmd_cmd(t_data *d);
+void	ft_pipe_cmd_outfile(t_data *d);
+void	ft_pipe_heredock_cmd(t_data *d);
+void	ft_pipe_infile_cmd_outfile(t_data *d);
+void	ft_pipe_heredock_cmd_outfile(t_data *d);
+
+/* ft_exec */
+void	ft_exec(t_data *d);
 
 
 #endif

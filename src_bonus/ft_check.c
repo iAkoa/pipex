@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 12:16:32 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 01:07:47 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 19:19:00 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,7 @@ void	ft_check_path(t_data *d, char *argv)
 		gc_free_malloc(&d->track, (void **)&d->check.path_access);
 	}
 	gc_free_all(&d->track);
+	write(2, "bash: command not found: ", 25);
+	write(2, argv, ft_strlen(argv));
+	write(2, "\n", 1);
 }

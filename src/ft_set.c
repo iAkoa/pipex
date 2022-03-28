@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_ptr.c                                      :+:      :+:    :+:   */
+/*   ft_set.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 16:25:37 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 19:13:23 by rmattheo         ###   ########lyon.fr   */
+/*   Created: 2022/03/25 15:24:46 by rmattheo          #+#    #+#             */
+/*   Updated: 2022/03/28 19:13:32 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-void	ft_init_ptr(t_data *d)
+void ft_set(int argc, char **argv, char **envp, t_data *d)
 {
-	(void)d;
+	d->main.argc = argc;
+	d->main.argv = argv;
+	d->main.envp = envp;
 }

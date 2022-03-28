@@ -16,11 +16,14 @@ INCLUDES= ${addprefix -I, ${sort ${dir ${HEADER}}}}
 
 INCLUDES_BONUS= ${addprefix -I, ${sort ${dir ${HEADER_BONUS}}}}
 
-SRCS	=	src/main.c			\
-			src/ft_free_error.c	\
-			src/ft_check.c		\
-			src/ft_operation.c	\
-			src/ft_init_ptr.c
+SRCS	=	src/main.c					\
+			src/ft_free_error.c			\
+			src/ft_parsing.c			\
+			src/ft_operation.c			\
+			src/ft_init_ptr.c			\
+			src/ft_set.c				\
+			src/ft_check.c				\
+			src/ft_exec.c
 
 SRCS_BONUS	=	src_bonus/main.c			\
 			src_bonus/ft_free_error.c		\

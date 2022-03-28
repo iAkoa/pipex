@@ -6,11 +6,11 @@
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 01:40:21 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 18:29:31 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 19:13:16 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex_bonus.h"
+#include "../includes/pipex.h"
 
 
 void	ft_exec(t_data *d)
