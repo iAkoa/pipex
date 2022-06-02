@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 19:20:43 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 21:22:45 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv, char **envp)
 	d.track = track;
 	ft_pars_cmd(&d);
 	d.lst = d.lst_start;
+	printf("path == %s\n", d.check.path_access);
 	ft_exec(&d);
 	d.lst = d.lst_start;
 	return (0);

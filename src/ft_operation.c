@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:37:10 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 19:13:26 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/05/30 19:10:46 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void	ft_pipe_cmd_outfile(t_data *d)
 	char	**envp;
 	char	*path;
 
+	(void)pfdout;
+	pfdout = d->lst->command->pfdout;
 	path = d->lst->command->cmd_path;
 	envp = d->main.envp;
 	fd_outfile = d->lst->next->command->fd_outfile;
@@ -99,7 +101,6 @@ void	ft_pipe_cmd_outfile(t_data *d)
 	pfdin = d->lst->command->pfdin;
 	last_pfdout = d->lst->prev->command->pfdout;
 	pfdin_last = d->lst->prev->command->pfdin;
-	pfdout = d->lst->command->pfdout;
 	if (close (pfdin_last) == -1)
 		gc_free_all(&d->track);
 	if (dup2(last_pfdout, STDIN_FILENO) == -1)

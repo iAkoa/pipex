@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:37:10 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 19:03:21 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/05/30 19:12:56 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	ft_pipe_cmd_outfile(t_data *d)
 	char	**envp;
 	char	*path;
 
+	(void)pfdout;
 	path = d->lst->command->cmd_path;
 	envp = d->main.envp;
 	fd_outfile = d->lst->next->command->fd_outfile;

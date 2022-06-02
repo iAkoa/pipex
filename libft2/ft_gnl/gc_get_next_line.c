@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 16:08:28 by tdeville          #+#    #+#             */
-/*   Updated: 2022/03/21 14:43:53 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/05/30 19:09:23 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	get_line(t_track **track, char **line, int fd, char *buffer)
 	int		r;
 	char	*tmp;
 
+	(void)tmp;
 	r = read(fd, buffer, BUFFER_SIZE);
 	while (r > 0)
 	{
@@ -41,6 +42,7 @@ static char	*parse_line(t_track **track, char **line)
 	char	*tmp;
 	char	*mem;
 
+	(void)mem;
 	if (!*line)
 		return (NULL);
 	if (!ft_strchr(*line, '\n'))
@@ -66,7 +68,6 @@ char	*gc_get_next_line(t_track **track, int fd)
 	static char	*line;
 	char		*str;
 	char		buffer[BUFFER_SIZE + 1];
-
 	if (read(fd, buffer, 0) == -1 || BUFFER_SIZE < 0)
 		return (NULL);
 	if (!(ft_strchr(line, '\n')))
