@@ -17,22 +17,26 @@ INCLUDES= ${addprefix -I, ${sort ${dir ${HEADER}}}}
 INCLUDES_BONUS= ${addprefix -I, ${sort ${dir ${HEADER_BONUS}}}}
 
 SRCS	=	src/main.c					\
-			src/ft_free_error.c			\
 			src/ft_parsing.c			\
+			src/ft_operation1.c			\
 			src/ft_operation.c			\
 			src/ft_init_ptr.c			\
 			src/ft_set.c				\
 			src/ft_check.c				\
-			src/ft_exec.c
+			src/ft_exec.c				\
+			src/ft_close_all_pipe.c		\
+			src/ft_parsing_bis.c
 
 SRCS_BONUS	=	src_bonus/main.c			\
-			src_bonus/ft_free_error.c		\
 			src_bonus/ft_parsing.c			\
 			src_bonus/ft_operation.c		\
+			src_bonus/ft_operation1.c			\
 			src_bonus/ft_init_ptr.c			\
 			src_bonus/ft_set.c				\
 			src_bonus/ft_check.c			\
-			src_bonus/ft_exec.c
+			src_bonus/ft_exec.c				\
+			src_bonus/ft_close_all_pipe.c	\
+			src_bonus/ft_parsing_bis.c
 
 OBJS	= ${SRCS:.c=.o}
 

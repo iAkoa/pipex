@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 16:08:28 by tdeville          #+#    #+#             */
-/*   Updated: 2022/05/30 19:09:23 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 14:22:00 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	*gc_get_next_line(t_track **track, int fd)
 	static char	*line;
 	char		*str;
 	char		buffer[BUFFER_SIZE + 1];
+
 	if (read(fd, buffer, 0) == -1 || BUFFER_SIZE < 0)
 		return (NULL);
 	if (!(ft_strchr(line, '\n')))

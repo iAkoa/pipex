@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/03/31 21:22:45 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/07 18:01:36 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	t_data d;
-	t_track *track;
+	t_data	d;
+	t_track	*track;
 
 	if (argc < 5)
 	{
@@ -27,7 +27,6 @@ int	main(int argc, char **argv, char **envp)
 	d.track = track;
 	ft_pars_cmd(&d);
 	d.lst = d.lst_start;
-	printf("path == %s\n", d.check.path_access);
 	ft_exec(&d);
 	d.lst = d.lst_start;
 	return (0);

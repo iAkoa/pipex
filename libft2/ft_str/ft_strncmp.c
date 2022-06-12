@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:36:04 by rmattheo          #+#    #+#             */
-/*   Updated: 2022/03/26 16:52:23 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 13:24:16 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	
+
 	if (!s1 || !s2)
 		return (1);
 	i = 0;

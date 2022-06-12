@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:42:38 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 19:11:08 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 14:24:48 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PIPEX_H
 
 # include "../libft2/include/libft.h"
-
+# include <errno.h>
 
 typedef struct s_check
 {
@@ -39,31 +39,21 @@ typedef struct s_data
 	t_list		*lst_start;
 }			t_data;
 
-/* check */
 void	ft_check_path(t_data *d, char *argv);
 void	ft_check_fd(t_data *d, int infile, int outfile);
-
-/* pars */
 void	ft_add_heredoc(t_data *d, char *argv);
 void	ft_add_command(t_data *d, char *argv, int file);
+void	ft_add_command_bis(t_data *d, char *argv, int file);
 void	ft_pars_cmd(t_data *d);
-
-/* ft_set */
-void ft_set(int argc, char **argv, char **envp, t_data *data);
-
-/* ft_creat_lst */
+void	ft_close_all_pipe(t_data *d);
+void	ft_set(int argc, char **argv, char **envp, t_data *data);
 void	ft_creat_lst(t_data *d);
-
-/* ft_operation */
 void	ft_pipe_infile_cmd(t_data *d);
 void	ft_pipe_cmd_cmd(t_data *d);
 void	ft_pipe_cmd_outfile(t_data *d);
 void	ft_pipe_heredock_cmd(t_data *d);
 void	ft_pipe_infile_cmd_outfile(t_data *d);
 void	ft_pipe_heredock_cmd_outfile(t_data *d);
-
-/* ft_exec */
 void	ft_exec(t_data *d);
-
 
 #endif

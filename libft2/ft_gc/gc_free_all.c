@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:38:45 by pat               #+#    #+#             */
-/*   Updated: 2022/03/28 15:09:45 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 13:25:08 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	gc_lstclear(t_track **lst, void (*del)(void*))
 void	gc_free_all(t_track **track)
 {
 	gc_lstclear(track, free);
-	// exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:51:46 by rmattheo          #+#    #+#             */
-/*   Updated: 2022/03/28 02:33:48 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 13:26:25 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 #  define BUFFER_SIZE 40
 # endif
 
-# define d_infile 1
-# define d_outfile 2
-# define d_heredoc 3
+# define D_INFILE 1
+# define D_OUTFILE 2
+# define D_HEREDOC 3
 
 typedef struct s_command
 {

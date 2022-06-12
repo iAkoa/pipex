@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:18:28 by rmattheo          #+#    #+#             */
-/*   Updated: 2022/03/27 22:33:12 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/11 13:24:43 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	last = ft_lstlast(*alst);
 	new->prev = last;
 	last->next = new;
-	
 }
