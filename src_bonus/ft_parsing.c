@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:35:24 by pat               #+#    #+#             */
-/*   Updated: 2022/06/12 20:30:27 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 09:14:54 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,14 @@ void	ft_creat_lst(t_data *d)
 {
 	if (!d->lst)
 	{
-		d->lst = ft_lstnew(gc_calloc(sizeof(t_command), 1, &d->track));
+		d->lst = gc_lstnew(&d->track,
+				(gc_calloc(sizeof(t_command), 1, &d->track)));
 		d->lst_start = d->lst;
 	}
 	else
 	{
 		ft_lstadd_back(&d->lst,
-			ft_lstnew(gc_calloc(sizeof(t_command), 1, &d->track)));
+			gc_lstnew(&d->track, (gc_calloc(sizeof(t_command), 1, &d->track))));
 	}
 }
 

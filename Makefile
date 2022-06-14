@@ -30,7 +30,7 @@ SRCS	=	src/main.c					\
 SRCS_BONUS	=	src_bonus/main.c			\
 			src_bonus/ft_parsing.c			\
 			src_bonus/ft_operation.c		\
-			src_bonus/ft_operation1.c			\
+			src_bonus/ft_operation1.c		\
 			src_bonus/ft_init_ptr.c			\
 			src_bonus/ft_set.c				\
 			src_bonus/ft_check.c			\

@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/06/07 18:01:36 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 09:17:59 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int argc, char **argv, char **envp)
 	t_data	d;
 	t_track	*track;
 
-	if (argc < 5)
+	if (argc != 5)
 	{
-		write (1, "not enough arguments !\n", 23);
+		write (1, "need 4 arguments !\n", 20);
 		exit(1);
 	}
 	track = NULL;
@@ -29,5 +29,6 @@ int	main(int argc, char **argv, char **envp)
 	d.lst = d.lst_start;
 	ft_exec(&d);
 	d.lst = d.lst_start;
+	gc_free_all(&d.track);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:35:24 by pat               #+#    #+#             */
-/*   Updated: 2022/06/11 14:27:48 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/14 09:13:45 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	ft_add_command(t_data *d, char *argv, int file)
 	ft_creat_lst(d);
 	if (d->lst->next)
 		d->lst = d->lst->next;
-	if (pipe(pipe_fd) == -1)
-		gc_free_all(&d->track);
+	pipe(pipe_fd);
 	d->lst->command->pfdin = pipe_fd[1];
 	d->lst->command->pfdout = pipe_fd[0];
 	d->lst->command->argc = d->main.argc;
@@ -58,13 +57,14 @@ void	ft_creat_lst(t_data *d)
 {
 	if (!d->lst)
 	{
-		d->lst = ft_lstnew(gc_calloc(sizeof(t_command), 1, &d->track));
+		d->lst = gc_lstnew(&d->track,
+				(gc_calloc(sizeof(t_command), 1, &d->track)));
 		d->lst_start = d->lst;
 	}
 	else
 	{
 		ft_lstadd_back(&d->lst,
-			ft_lstnew(gc_calloc(sizeof(t_command), 1, &d->track)));
+			gc_lstnew(&d->track, (gc_calloc(sizeof(t_command), 1, &d->track))));
 	}
 }
 
@@ -74,7 +74,7 @@ void	ft_pars_cmd(t_data *d)
 
 	i = 1;
 	if (ft_strncmp(d->main.argv[1], "here_doc", 8) && d->main.argc < 5)
-		gc_free_all(&d->track);
+		return ;
 	while (d->main.argv[i])
 	{
 		if (!ft_strncmp(d->main.argv[1], "here_doc", ft_strlen("here_doc"))
