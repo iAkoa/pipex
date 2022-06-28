@@ -17,26 +17,11 @@ INCLUDES= ${addprefix -I, ${sort ${dir ${HEADER}}}}
 INCLUDES_BONUS= ${addprefix -I, ${sort ${dir ${HEADER_BONUS}}}}
 
 SRCS	=	src/main.c					\
-			src/ft_parsing.c			\
-			src/ft_operation1.c			\
-			src/ft_operation.c			\
-			src/ft_init_ptr.c			\
-			src/ft_set.c				\
-			src/ft_check.c				\
-			src/ft_exec.c				\
-			src/ft_close_all_pipe.c		\
-			src/ft_parsing_bis.c
+			src/p_parsing.c				\
+			src/p_check.c				\
+			src/e_exec.c
 
 SRCS_BONUS	=	src_bonus/main.c			\
-			src_bonus/ft_parsing.c			\
-			src_bonus/ft_operation.c		\
-			src_bonus/ft_operation1.c		\
-			src_bonus/ft_init_ptr.c			\
-			src_bonus/ft_set.c				\
-			src_bonus/ft_check.c			\
-			src_bonus/ft_exec.c				\
-			src_bonus/ft_close_all_pipe.c	\
-			src_bonus/ft_parsing_bis.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -44,7 +29,7 @@ OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
 CC		= gcc
 
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= #-Wall -Werror -Wextra
 # LIBFLAGS= -fsanitize=address -g3
 
 all: maker ${NAME}
@@ -64,12 +49,21 @@ maker:
 		${MAKE} -C ${LIBFT}
 
 clean:
-		rm -f ${OBJS} ${OBJS_BONUS}
+		rm -f ${OBJS}
+		${MAKE} clean -C ${LIBFT}
+
+clean_bonus:
+		rm -f ${OBJS_BONUS}
 		${MAKE} clean -C ${LIBFT}
 
 fclean:	clean
 		rm -f ${NAME}
 		${MAKE} fclean -C ${LIBFT}
 
+fclean_bonus:	clean_bonus
+		rm -f ${NAME_BONUS}
+		${MAKE} fclean -C ${LIBFT}
+
 re:		fclean all
-.PHONY: all bonus clean fclean re maker
+re_bonus: fclean_bonus bonus
+.PHONY: all bonus clean fclean re maker clean_bonus fclean_bonus

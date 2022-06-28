@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:51:46 by rmattheo          #+#    #+#             */
-/*   Updated: 2022/06/11 13:26:25 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/22 16:45:40 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_command
 	int		pfdout;
 	int		fd_infile;
 	int		fd_outfile;
-	int		argc;
-	char	*cmd_path;
 	char	*here_doc;
+	char	*cmd_path;
+	int		argc;
 	char	**envp;
 	char	**cmd;
 }			t_command;
