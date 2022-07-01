@@ -2,13 +2,9 @@ NAME	= pipex
 
 NAME_BONUS	= pipex_bonus
 
-HEADER	= 	includes/pipex.h		\
-			libft2/includes/libft.h	\
-			libft2/includes/gc.h
+HEADER	= 	includes/pipex.h
 
-HEADER_BONUS = includes/pipex_bonus.h		\
-			libft2/includes/libft.h			\
-			libft2/includes/gc.h
+HEADER_BONUS = includes/pipex_bonus.h
 
 LIBFT	= libft2
 
@@ -33,17 +29,17 @@ OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
 CC		= gcc
 
-# CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra
 
 all: maker ${NAME}
 
-%.o : %.c	${HEADER}
+%.o : %.c	${HEADER} ${HEADER_BONUS} Makefile
 			${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
-${NAME}: ${OBJS} libft2/libft2.a
+${NAME}: ${OBJS} ${HEADER} Makefile
 		${CC}  ${CFLAGS} ${OBJS} ${LIBFLAGS} ${INCLUDES} -o $@ libft2/libft2.a
 
-${NAME_BONUS}: ${OBJS_BONUS} libft2/libft2.a
+${NAME_BONUS}: ${OBJS_BONUS} ${HEADER_BONUS} Makefile
 		${CC}  ${CFLAGS} ${OBJS_BONUS} ${LIBFLAGS} ${INCLUDES_BONUS} -o $@ libft2/libft2.a
 
 bonus: 	maker ${NAME_BONUS}

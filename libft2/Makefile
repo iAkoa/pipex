@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
+#    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2022/07/01 17:21:17 by pat              ###   ########lyon.fr    #
+#    Updated: 2022/07/01 19:23:56 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ OBJS    = ${SRCS:.c=.o}
 
 CC        = gcc
 
-CFLAGS    = -Wall -Wextra -Werror -glldb -ffast-math -o3
+CFLAGS    = -Wall -Wextra -Werror
 
 %o : %c ${HEADER} Makefile
 		${CC} ${CFLAGS} -c $< -o $@

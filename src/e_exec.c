@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   e_exec.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:25:52 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 13:35:46 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 18:42:34 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	e_infile(t_pars *p, t_commands *c, int i)
 	return (p->fd_in);
 }
 
-void	e_heredoc(t_data *d, t_pars *p, t_commands c)
+void	e_heredoc(t_commands c)
 {
 	int	pipe_heredoc[2];
 
@@ -57,11 +57,11 @@ void	e_heredoc(t_data *d, t_pars *p, t_commands c)
 		exit(1);
 }
 
-int	e_child(t_data *d, t_pars *p, t_commands *c, int i)
+int	e_child(t_pars *p, t_commands *c, int i)
 {
 	close(p->pfd[0]);
 	if (c[i].here_doc)
-		e_heredoc(d, p, c[i]);
+		e_heredoc(c[i]);
 	if (c[i].infile)
 	{
 		p->fd_in = e_infile(p, c, i);
@@ -85,7 +85,7 @@ int	e_child(t_data *d, t_pars *p, t_commands *c, int i)
 	exit(1);
 }
 
-void	e_exec(t_data *d, t_pars *p, t_commands *c)
+void	e_exec(t_pars *p, t_commands *c)
 {
 	int	i;
 
@@ -97,7 +97,7 @@ void	e_exec(t_data *d, t_pars *p, t_commands *c)
 		c[i].pid = fork();
 		if (!c[i].pid)
 		{
-			if (!e_child(d, p, c, i))
+			if (!e_child(p, c, i))
 				return ;
 		}
 		else

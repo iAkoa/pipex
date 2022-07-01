@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:42:38 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 13:27:53 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 18:40:55 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ void		close_all_file(t_commands *c);
 void		heredoc_pipe(t_commands *c, int i);
 void		open_pipe(t_commands *c, int i);
 void		close_all_pipe(t_commands *c);
-void		e_exec(t_data *d, t_pars *p, t_commands *c);
+void		e_exec(t_pars *p, t_commands *c);
 int			e_outfile(t_pars *p, t_commands *c, int i);
 int			e_infile(t_pars *p, t_commands *c, int i);
-void		e_heredoc(t_data *d, t_pars *p, t_commands c);
-int			e_child(t_data *d, t_pars *p, t_commands *c, int i);
+void		e_heredoc(t_commands c);
+int			e_child(t_pars *p, t_commands *c, int i);
 void		e_execve(t_pars *p, t_commands *c, int i);
 
 #endif
