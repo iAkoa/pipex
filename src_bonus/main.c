@@ -6,11 +6,11 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:40:44 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 17:17:17 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 13:41:56 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../includes/pipex_bonus.h"
 
 void	p_set(int argc, char **argv, char **envp, t_pars *p)
 {
@@ -22,25 +22,22 @@ void	p_set(int argc, char **argv, char **envp, t_pars *p)
 int	main(int argc, char **argv, char **envp)
 {
 	t_data	d;
-	
-	(void)argc;
-	(void)argv;
-	(void)envp;
-	d.track = NULL;
+	t_track	*track;
+
 	if (argc != 5)
 	{
 		write (1, "need 4 arguments !\n", 20);
 		exit(1);
 	}
+	track = NULL;
+	d.track = track;
 	p_set(argc, argv, envp, &d.pars);
 	d.commands = p_parsing(&d, &d.pars);
-	// while (d.track->next != NULL)
-	// {
-	// 	if (d.track->address)
-	// 		dprintf(2, "track address = %p\n", d.track->address);
-	// 	d.track = d.track->next;
-	// }
+	while (d.track != NULL)
+	{
+		dprintf("track address = %p\n", d.track->address);
+		d.track->next = d.track;
+	}
 	e_exec(&d, &d.pars, d.commands);
-	gc_free_all(&d.track);
 	return (0);
 }

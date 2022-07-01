@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_error.c                                         :+:      :+:    :+:   */
+/*   p_set.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:45:47 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 16:28:55 by pat              ###   ########lyon.fr   */
+/*   Created: 2022/06/27 00:33:22 by pat               #+#    #+#             */
+/*   Updated: 2022/07/01 13:22:08 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
-#include "../include/gc.h"
+#include "../includes/pipex_bonus.h"
 
-void	gc_error(t_track **track)
+void	p_set(int argc, char **argv, char **envp, t_pars *p)
 {
-	if (*track)
-		gc_free_all(track);
-	exit(0);
+	p->argc = argc;
+	p->argv = argv;
+	p->envp = envp;
 }

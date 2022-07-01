@@ -6,14 +6,14 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 00:47:22 by rmattheo          #+#    #+#             */
-/*   Updated: 2022/05/30 19:08:53 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/06/30 17:48:31 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/gc.h"
 
-unsigned int	ft_strcmp(char *str)
+unsigned int	ft_strcmp1(char *str)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -50,7 +50,7 @@ unsigned int	check(char *base)
 	i = 0;
 	if (indx(base) < 2)
 		return (0);
-	if (ft_strcmp(base))
+	if (ft_strcmp1(base))
 		return (0);
 	while (base[i])
 	{

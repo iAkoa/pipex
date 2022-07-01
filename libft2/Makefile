@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2022/03/25 16:08:14 by rmattheo         ###   ########lyon.fr    #
+#    Updated: 2022/07/01 17:21:17 by pat              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,14 +85,15 @@ SRCS	=	ft_check/ft_isalpha.c			\
 			ft_gc/gc_free_malloc.c		\
 			ft_gc/gc_free_malloc_split.c\
 			ft_gc/gc_lstdelone.c		\
-			ft_gc/gc_error.c
+			ft_gc/gc_error.c			\
+			ft_str/ft_strcmp.c
 
 
 OBJS    = ${SRCS:.c=.o}
 
 CC        = gcc
 
-CFLAGS    = -Wall -Wextra -Werror
+CFLAGS    = -Wall -Wextra -Werror -glldb -ffast-math -o3
 
 %o : %c ${HEADER} Makefile
 		${CC} ${CFLAGS} -c $< -o $@

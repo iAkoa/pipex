@@ -19,18 +19,21 @@ INCLUDES_BONUS= ${addprefix -I, ${sort ${dir ${HEADER_BONUS}}}}
 SRCS	=	src/main.c					\
 			src/p_parsing.c				\
 			src/p_check.c				\
-			src/e_exec.c
+			src/e_exec.c				\
+			src/e_execve.c
 
 SRCS_BONUS	=	src_bonus/main.c			\
-
+				src_bonus/p_parsing.c		\
+				src_bonus/p_check.c			\
+				src_bonus/e_exec.c			\
+				src_bonus/e_execve.c
 OBJS	= ${SRCS:.c=.o}
 
 OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
 CC		= gcc
 
-CFLAGS	= #-Wall -Werror -Wextra
-# LIBFLAGS= -fsanitize=address -g3
+# CFLAGS	= -Wall -Werror -Wextra
 
 all: maker ${NAME}
 

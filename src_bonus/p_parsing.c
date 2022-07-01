@@ -6,11 +6,11 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:35:24 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 16:31:39 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 16:31:13 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../includes/pipex_bonus.h"
 
 void	p_add_heredoc(t_data *d, t_commands *commands, char *argv)
 {

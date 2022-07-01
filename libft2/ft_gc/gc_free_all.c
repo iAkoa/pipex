@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:38:45 by pat               #+#    #+#             */
-/*   Updated: 2022/06/11 13:25:08 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 17:09:37 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	gc_lstclear(t_track **lst, void (*del)(void*))
 		return ;
 	while (*lst)
 	{
+		printf("%p\n", (*lst)->address);
 		temp = (*lst)->next;
 		gc_lstdelone(*lst, del);
 		*lst = temp;

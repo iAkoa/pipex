@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_error.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:45:47 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 16:28:55 by pat              ###   ########lyon.fr   */
+/*   Created: 2022/06/30 17:44:19 by pat               #+#    #+#             */
+/*   Updated: 2022/07/01 13:24:27 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/gc.h"
 
-void	gc_error(t_track **track)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	if (*track)
-		gc_free_all(track);
-	exit(0);
+	size_t	i;
+
+	if (!s1 || !s2)
+		return (1);
+	i = 0;
+	while (1)
+	{
+		if (s1[i] != s2[i] || !s1[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
 }

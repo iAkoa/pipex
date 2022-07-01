@@ -6,11 +6,11 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:25:52 by pat               #+#    #+#             */
-/*   Updated: 2022/07/01 13:35:46 by pat              ###   ########lyon.fr   */
+/*   Updated: 2022/07/01 13:33:55 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../includes/pipex_bonus.h"
 
 int	e_outfile(t_pars *p, t_commands *c, int i)
 {
@@ -89,6 +89,8 @@ void	e_exec(t_data *d, t_pars *p, t_commands *c)
 {
 	int	i;
 
+	(void)d;
+	(void)p;
 	p->fd_in = 0;
 	i = -1;
 	while (c[++i].stop == 0)
